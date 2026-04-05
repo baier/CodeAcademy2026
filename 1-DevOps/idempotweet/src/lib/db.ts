@@ -92,10 +92,10 @@ export async function getIdems(page: number, pageSize: number, includeSeeded: bo
 export async function getTotalCount(includeSeeded: boolean = true): Promise<number> {
   if (includeSeeded) {
     const result = await query<{ count: string }>('SELECT COUNT(*) as count FROM idems');
-    return parseInt(result.rows[0].count, 10);
+    return Number.parseInt(result.rows[0].count, 10);
   } else {
     const result = await query<{ count: string }>('SELECT COUNT(*) as count FROM idems WHERE is_seeded = false');
-    return parseInt(result.rows[0].count, 10);
+    return Number.parseInt(result.rows[0].count, 10);
   }
 }
 
