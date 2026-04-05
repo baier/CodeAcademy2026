@@ -27,21 +27,21 @@ function getDemoPage(page: number, pageSize: number): PaginatedIdems {
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const page = parseInt(searchParams.get("page") || "1", 10);
-  const pageSize = parseInt(
+  const page = Number.parseInt(searchParams.get("page") || "1", 10);
+  const pageSize = Number.parseInt(
     searchParams.get("pageSize") || String(DEFAULT_PAGE_SIZE),
     10
   );
   const includeSeeded = searchParams.get("include_seeded") !== "false";
 
-  if (page < 1 || isNaN(page)) {
+  if (page < 1 || Number.isNaN(page)) {
     return NextResponse.json(
       { error: "Invalid page number", message: "Page must be a positive integer" },
       { status: 400 }
     );
   }
 
-  if (pageSize < 1 || pageSize > 100 || isNaN(pageSize)) {
+  if (pageSize < 1 || pageSize > 100 || Number.isNaN(pageSize)) {
     return NextResponse.json(
       { error: "Invalid page size", message: "Page size must be between 1 and 100" },
       { status: 400 }
