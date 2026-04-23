@@ -3,3 +3,6 @@ target/
 .idea/
 .idea
 *.iml
+out/
+bin/
+obj/

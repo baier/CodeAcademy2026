@@ -36,10 +36,10 @@ jobs:
           fi
           mvn clean compile
       
-      - name: Set up .NET 8
+      - name: Set up .NET 10
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '10.0.x'
       
       - name: Build .NET Consumer
         working-directory: 2-EventDriven/dotnet-consumer
