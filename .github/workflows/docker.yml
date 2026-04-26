@@ -22,6 +22,7 @@ jobs:
   # Job 1: Reuse CI workflow for build and test
   ci:
     uses: ./.github/workflows/ci.yml
+    secrets: inherit
 
   # Job 2: Docker Build and Push (after CI passes)
   docker:
