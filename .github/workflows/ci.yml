@@ -37,6 +37,24 @@ jobs:
               
             - name: Generate test coverage
               run: yarn test:coverage
+
+            - name: Check Sonar config
+              run: |
+                if [ -z "$SONAR_TOKEN" ]; then
+                  echo "SONAR_TOKEN is missing"
+                  exit 1
+                fi
+
+                if [ -z "$SONAR_HOST_URL" ]; then
+                  echo "SONAR_HOST_URL is missing"
+                  exit 1
+                fi
+
+                echo "SONAR_TOKEN is set"
+                echo "SONAR_HOST_URL=$SONAR_HOST_URL"
+              env:
+                SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+                SONAR_HOST_URL: ${{ vars.SONAR_HOST_URL }}
               
             - name: SonarQube Scan
               uses: SonarSource/sonarqube-scan-action@v6
