@@ -15,4 +15,9 @@
     <None Include="../appsettings.json" Link="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
+  <ItemGroup>
+  <ProjectReference Include="../Common/Common.csproj" />
+  <ProjectReference Include="../Infrastructure/Infrastructure.csproj" />
+</ItemGroup>
+
 </Project>
