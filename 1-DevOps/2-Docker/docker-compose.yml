@@ -4,7 +4,10 @@
 
 services:
   app:
-    image: ghcr.io/${GITHUB_REPOSITORY:-owner/repo}:latest
+    image: ghcr.io/baier/codeacademy2026:latest
+    # build:
+    #   context: ../../1-DevOps/idempotweet   # build context (applikasjonsmappen)
+    #   dockerfile: ../2-Docker/Dockerfile 
     ports:
       - "3000:3000"
     environment:
