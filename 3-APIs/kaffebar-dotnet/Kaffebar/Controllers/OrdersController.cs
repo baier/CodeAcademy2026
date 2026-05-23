@@ -6,9 +6,11 @@ namespace Kaffebar.Controllers
     [AllowAnonymous]
     [ApiController]
     [Route("orders")]
+
     public class OrdersController : ControllerBase
     {
         [HttpPost]
+
         public IActionResult CreateOrder(CreateOrderRequest request)
         {
             var orderId = Guid.NewGuid();

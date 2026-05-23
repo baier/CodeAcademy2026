@@ -12,6 +12,10 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
+// Aktiverer validering for Minimal APIs (.NET 10) - gjør at .WithValidation() fungerer
+builder.Services.AddValidation();
+
+
 var app = builder.Build();
 app.MapControllers();
 
@@ -40,5 +44,16 @@ app.MapGet("/menu", () => menu)
 .WithName("GetMenu")
 .WithSummary("Hent kaffemeny")
 .WithDescription("Returnerer en liste over alle tilgjengelige kaffedrikker i kaffebaren.");
+
+/*
+// Eksempel på Minimal API som bruker automatisk validering:
+app.MapPost("/orders", (CreateOrderRequest req) =>
+{
+    var orderId = Guid.NewGuid();
+    var created = new CreateOrderResponse(orderId, req.CoffeeId, DateTime.UtcNow);
+    return Results.Created($"/orders/{orderId}", created);
+})
+.WithValidation();
+*/
 
 app.Run();

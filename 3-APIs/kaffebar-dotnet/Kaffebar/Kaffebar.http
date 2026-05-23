@@ -13,7 +13,9 @@ Content-Type: application/json
     "coffeeId": "c3d12ef1-e8cb-4162-993d-7172240a8e4d",
     "size": "Medium",
     "milkType": "Whole",
-    "extraShot": true
+    "extraShot": true,
+    "customerName": "John Doe",
+    "quantity": 12
 }
 
 ### Se den genererte OpenAPI-spesifikasjonen (åpne i browser)
