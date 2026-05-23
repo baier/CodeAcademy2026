@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kaffebar.Controllers
 {
+    [AllowAnonymous]
     [ApiController]
     [Route("orders")]
     public class OrdersController : ControllerBase

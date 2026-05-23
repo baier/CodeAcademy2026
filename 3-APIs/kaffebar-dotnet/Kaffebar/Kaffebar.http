@@ -10,7 +10,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "coffeeId": "c3d12ef1-e8cb-4162-993d-7172240a8e4d"
+    "coffeeId": "c3d12ef1-e8cb-4162-993d-7172240a8e4d",
+    "size": "Medium",
+    "milkType": "Whole",
+    "extraShot": true
 }
 
 ### Se den genererte OpenAPI-spesifikasjonen (åpne i browser)
