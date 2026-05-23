@@ -5,8 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Registrer OpenAPI-tjenestene. Disse genererer spesifikasjonen
 // automatisk basert på endepunktene og typene i prosjektet (code-first).
 builder.Services.AddOpenApi();
+builder.Services.AddControllers();
 
 var app = builder.Build();
+app.MapControllers();
 
 if (app.Environment.IsDevelopment())
 {
