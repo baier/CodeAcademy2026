@@ -13,13 +13,16 @@ Content-Type: application/json
     "coffeeId": "c3d12ef1-e8cb-4162-993d-7172240a8e4d",
     "size": "Medium",
     "milkType": "Whole",
-    "extraShot": true,
-    "customerName": "John Doe",
-    "quantity": 12
+    "customerName": "hei",
+    "quantity": 1
 }
 
+### Hent order (bruk orderId fra POST-responsen eller Location-headeren)
+GET {{host}}/orders/<orderId>
+Accept: application/json
+
 ### Se den genererte OpenAPI-spesifikasjonen (åpne i browser)
-# {{host}}/openapi/v1.json
+{{host}}/openapi/v1.json
 
 ### Åpne Scalar UI (åpne i browser)
-# {{host}}/scalar/v1
+{{host}}/scalar/v1
